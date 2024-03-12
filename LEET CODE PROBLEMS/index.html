@@ -1,0 +1,35 @@
+<!-- question 2 create a todolist using javascript -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="problems_2_styles.css">
+      
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="container">
+            <input type="text" id="todoinput" Placeholder="Enter the list">
+            <button id="additems" onclick="addtask()">ADD</button>
+            <ul id="todolist"></ul>
+        </div>
+        
+        
+        <script>
+        function addtask(){
+                 const inp = document.getElementById('todoinput');
+                 const inputtext = inp.value.trim();
+                 console.log(inputtext);
+                 if(inputtext){
+                    const todolist = document.getElementById('todolist');
+                    const todoitems = document.createElement("li");
+                    todoitems.textContent=inputtext;
+                    todolist.appendChild(todoitems);
+                    inp.value="null";
+                 }
+        }
+    </script>
+    </body>
+</html>
